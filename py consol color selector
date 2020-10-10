@@ -1,0 +1,45 @@
+#color chooser from gui and os module
+from tkinter import *
+import random
+import os
+root=Tk()
+#function
+def work():
+    a=w.get()
+    os.system(f"color {a}")
+def cb_work():
+    ri=random.randint(1,9)
+    ra=random.choice(["a","b","c","d","e","f"])
+    os.system(f"color {ri}{ra}")
+    print(f"color code is {ri}{ra}")
+    
+#win namme
+root.title(" ")
+#win resolutions
+root.minsize(170,240)
+root.maxsize(170,240)
+#gui message
+i='''Welcome in app
+Powerd by AKELA
+owner namme Ankit'''
+print(f"{i}")
+t='''
+0 = Black       8 = Gray
+1 = Blue        9 = Light Blue
+2 = Green       A = Light Green
+3 = Aqua        B = Light Aqua
+4 = Red         C = Light Red
+5 = Purple      D = Light Purple
+6 = Yellow      E = Light Yellow
+7 = White       F = Bright White
+'''
+Label(text=f"{t}",bg="peru").grid(row="0",column="1")
+#input box
+w=Entry(root,textvariable=StringVar())
+w.grid(row="1",column="1",padx=1)
+#button
+Button(text="select",command=work,bg="grey",fg="white",font="comicsansms 9 italic ").grid(row="2",column="1")
+cb=Radiobutton(root,text="color loop",variable=IntVar(),bg="grey",fg="white",font="comicsansms 9 italic ",value=0,command=cb_work)
+cb.grid(row="3",column="1")
+#root.button()
+root.mainloop()
