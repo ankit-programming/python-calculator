@@ -1,4 +1,6 @@
 #color chooser from gui and os module
+#release date 10/10/2020
+#all cc reserved
 from tkinter import *
 import random
 import os
